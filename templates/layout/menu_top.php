@@ -45,7 +45,7 @@ $row_logo = $d->fetch_array();
 
 
     <nav id="menu">
-        <div class="col_w30">
+        <div class="col_w20">
             <a href="." class="wp_logo"><img class="logo" src="<?=_upload_hinhanh_l.$row_logo['photo']?>" /></a>
         </div>
         <ul class="col_w70 list_menu">
@@ -54,35 +54,38 @@ Home</a></li> -->
 <li><a class="<?php if($_REQUEST['com'] == 'about-us') echo 'active'; ?>" href="about-us.html">
 About</a>
 <div class="content">
-bbbbb
+    bbbbb
 </div>
 </li>
 <li>
     <a class="<?php if($_REQUEST['com'] == 'product') echo 'active'; ?>" href="product.html">Products</a>
-    <div class="content">
-        aaaa
-    </div>
-    <ul class="">
-        <?php 
-        for($i = 0; $i < count($p_danhmuc); $i++){ 
-          $d->reset();
-          $sql_dvquan="select ten$lang as ten,tenkhongdau,id from #_product_list where id_danhmuc=".$p_danhmuc[$i]['id']." and type='sanpham' and hienthi=1 order by stt asc,id desc";
-          $d->query($sql_dvquan);
-          $p_list=$d->result_array();
 
-          ?>
-          <li>
-            <a href="product/<?=$p_danhmuc[$i]['tenkhongdau']?>/"><?=$p_danhmuc[$i]['ten']?></a>
-            <?php if(count($p_list)>0) { ?>
-                <ul class="dm_cap2">
-                    <?php for($j=0;$j<count($p_list);$j++) { ?>
-                        <li><a href="product/<?=$p_list[$j]['id']?>/<?=$p_list[$j]['tenkhongdau']?>/"><?=$p_list[$j]['ten']?></a></li>
+    <ul class="content__list">
+        <h2>Product</h2>
+        <div>
+            <?php 
+            for($i = 0; $i < count($p_danhmuc); $i++){ 
+              $d->reset();
+              $sql_dvquan="select ten$lang as ten,tenkhongdau,id from #_product_list where id_danhmuc=".$p_danhmuc[$i]['id']." and type='sanpham' and hienthi=1 order by stt asc,id desc";
+              $d->query($sql_dvquan);
+              $p_list=$d->result_array();
+
+              ?>
+              <li>
+                <a href="product/<?=$p_danhmuc[$i]['tenkhongdau']?>/"><?=$p_danhmuc[$i]['ten']?></a>
+                <div class="content__list--detail">
+                    <?php if(count($p_list)>0) { ?>
+                        <ul class="dm_cap2">
+                            <?php for($j=0;$j<count($p_list);$j++) { ?>
+                                <li><a href="product/<?=$p_list[$j]['id']?>/<?=$p_list[$j]['tenkhongdau']?>/"><?=$p_list[$j]['ten']?></a></li>
+                            <?php } ?>
+                        </ul>
                     <?php } ?>
-                </ul>
-            <?php } ?>
+                </div>
+            </li>
+        <?php } ?>
+    </div>
 
-        </li>
-    <?php } ?>
 </ul>
 </li>
 <li><a class="<?php if($_REQUEST['com'] == 'encyclopedia') echo 'active'; ?>" href="encyclopedia.html">
