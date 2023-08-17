@@ -90,7 +90,7 @@ $row_logo = $d->fetch_array();
                                                     <ul class="dm_cap3">
                                                         <?php for($k=0;$k<count($p_cat);$k++) { ?>
                                                             <li>
-                                                                <a href="product/<?=$p_cat[$k]['id']?>/<?=$p_cat[$k]['tenkhongdau']?>/"><?=$p_cat[$k]['ten']?>
+                                                                <a href="product/<?=$p_danhmuc[$i]['tenkhongdau']?>/<?=$p_list[$j]['tenkhongdau']?>/<?=$p_cat[$k]['tenkhongdau']?>/"><?=$p_cat[$k]['ten']?>
                                                             </a>
                                                         </li>
                                                     <?php } ?>

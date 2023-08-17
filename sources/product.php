@@ -99,6 +99,7 @@
 		if(empty($title_bar)){redirect("http://".$config_url.'/404.php');}
 		
 		$title_cat = $title_bar['ten'];
+		$id_cats=$title_bar['id'];
 		$title = $title_bar['title'];
 		$keywords = $title_bar['keywords'];
 		$description = $title_bar['description'];
@@ -116,6 +117,7 @@
 		
 		$title_cat = $title_bar['ten'];
 		$title = $title_bar['title'];
+		$id_lists=$title_bar['id'];
 		$keywords = $title_bar['keywords'];
 		$description = $title_bar['description'];
 	
@@ -126,12 +128,14 @@
 	else if($id_danhmuc!='')
 	{		
 		$d->reset();
-		$sql = "select id,ten$lang as ten,title,keywords,description FROM #_product_danhmuc where id='$id_danhmuc' or tenkhongdau='$id_danhmuc' limit 0,1";
+		$sql = "select id,ten$lang as ten,title,keywords,description,tenkhongdau FROM #_product_danhmuc where id='$id_danhmuc' or tenkhongdau='$id_danhmuc' limit 0,1";
 		$d->query($sql);
 		$title_bar = $d->fetch_array();
 		if(empty($title_bar)){redirect("http://".$config_url.'/404.php');}
 					
 		$title_cat = $title_bar['ten'];
+		$title_no=$title_bar['tenkhongdau'];
+		$id_danhmucs= $title_bar['id'];
 		$title = $title_bar['title'];
 		$keywords = $title_bar['keywords'];
 		$description = $title_bar['description'];
