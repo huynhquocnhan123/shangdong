@@ -18,7 +18,7 @@
 	$d->reset();
 	$sql = "select id,ten$lang as ten,tenkhongdau,link from #_video where $where limit $bg,$pageSize";		
 	$d->query($sql);
-	$product = $d->result_array();	
+	// $product = $d->result_array();	
 	$url_link = getCurrentPageURL();
 
 ?>

@@ -6,19 +6,19 @@
 <div id="banner_product">
     <img src="images/banner_product.jpg" alt="Banner">
 </div>
-<div id="redirect_bar">
+<!-- <div id="redirect_bar">
     <div class="inner"><a href="."><i class="fa fa-home"></i> Home</a> > <span><?=$title_cat?></span></div>
-</div>
+</div> -->
 
 <div class="box_container product">
-    <div id="col_left">
-        <?php include _template."layout/left.php";?>
+    <div id="">
+        <!-- <?php include _template."layout/left.php";?> -->
     </div>
-    <div id="col_right">
+    <div id="">
         <div class="content">
             <div class="zoom_slick">    
                 <div class="slick2">                
-                    <a data-zoom-id="Zoom-detail" id="Zoom-detail" class="MagicZoom" href="<?php if($row_detail['photo'] != NULL)echo _upload_sanpham_l.$row_detail['photo'];else echo 'images/noimage.gif';?>" title="<?=$row_detail['ten']?>"><img class='cloudzoom' src="<?php if($row_detail['photo'] != NULL)echo _upload_sanpham_l.$row_detail['photo'];else echo 'images/noimage.gif';?>" /></a>
+                    <a data-zoom-id="Zoom-detail" id="Zoom-detail" class="MagicZoom" href="<?php if($row_detail['photo'] != NULL)echo _upload_sanpham_l.$row_detail['photo'];else echo 'images/noimage.gif';?>" title="<?=$row_detail['ten']?>"><img class='' src="<?php if($row_detail['photo'] != NULL)echo _upload_sanpham_l.$row_detail['photo'];else echo 'images/noimage.gif';?>" /></a>
 
                     <?php $count=count($hinhthem); if($count>0) {?>
                         <?php for($j=0,$count_hinhthem=count($hinhthem);$j<$count_hinhthem;$j++){?>
@@ -38,7 +38,7 @@
                  
                     <li class="ten"><?=$row_detail['ten']?></li>
 
-                    <?php if($row_detail['mota'] != '') { ?><li><?=$row_detail['mota']?></li><?php } ?>
+                    <?php if($row_detail['description'] != '') { ?><li><?=$row_detail['description']?></li><?php } ?>
 
 
                 </ul>
@@ -49,7 +49,7 @@
                 <?=$row_detail['noidung']?>   
             </div>           
         </div>
-        <div class="clear"></div>
+        <div class="clear"></div>   
     </div>
 
 

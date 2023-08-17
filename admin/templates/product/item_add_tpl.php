@@ -204,6 +204,13 @@ function get_main_item()
 			</div>
 			<div class="clear"></div>
 		</div>
+		<div class="formRow">
+			<label>Chọn danh mục 3</label>
+			<div class="formRight">
+			<?=get_main_category()?>
+			</div>
+			<div class="clear"></div>
+		</div>
         <div class="formRow">
             <label>Mã sản phẩm:</label>
             <div class="formRight">
