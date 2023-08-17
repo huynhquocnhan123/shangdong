@@ -183,8 +183,7 @@ function get_main_category()
         <td class="tb_data_small"><a href="#" class="tipS" style="margin: 5px;">Thứ tự</a></td>     
         <td class="tb_data_small"><?=get_main_danhmuc()?></td>
         <td class="tb_data_small"><?=get_main_list()?></td>
-        
-        <td class="tb_data_small none"><?=get_main_category()?></td>
+        <td class="tb_data_small "><?=get_main_category()?></td>
         <td class="tb_data_small none"><?=get_main_item()?></td>
         
         <td class="sortCol"><div>Tên sản phẩm<span></span></div></td>
@@ -223,7 +222,7 @@ function get_main_category()
 				echo @$item_list['ten']
 			?>      
         </td>
-                <td align="center" class="none">
+                <td align="center" class="">
 			<?php
 				$sql_cat="select ten from table_product_cat where id='".$items[$i]['id_cat']."'";
 				$result=mysql_query($sql_cat);

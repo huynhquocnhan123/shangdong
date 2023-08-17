@@ -4,55 +4,58 @@
 //	$d->query($sql_tinmoi);
 //	$tinmoi = $d->result_array();
 //
-	$d->reset();
-	$sql_hotro = "select ten$lang as ten,dienthoai,email,yahoo,skype from #_yahoo where hienthi=1 and type='yahoo' order by stt,id desc";
-	$d->query($sql_hotro);
-	$hotro = $d->result_array();
+$d->reset();
+$sql_hotro = "select ten$lang as ten,dienthoai,email,yahoo,skype from #_yahoo where hienthi=1 and type='yahoo' order by stt,id desc";
+$d->query($sql_hotro);
+$hotro = $d->result_array();
 //	
-	$d->reset();
-	$sql_quangcao = "select id,ten$lang as ten,link,photo from #_slider where hienthi=1 and type='quangcao' order by stt,id desc";
-	$d->query($sql_quangcao);
-	$quangcao = $d->result_array();
+$d->reset();
+$sql_quangcao = "select id,ten$lang as ten,link,photo from #_slider where hienthi=1 and type='quangcao' order by stt,id desc";
+$d->query($sql_quangcao);
+$quangcao = $d->result_array();
 //	
 //	$d->reset();
 //	$sql_lkweb="select id,ten$lang as ten,link from #_lkweb where hienthi=1 and type='lkweb' order by stt,id desc";
 //	$d->query($sql_lkweb);
 //	$lkweb=$d->result_array();
 
-	
+
 ?>
 
 
 <div id="danhmuc_left">
-    
-<?php	
-$d->reset();
-$sql_dvquan="select ten$lang as ten,tenkhongdau,id from #_product_danhmuc where type='sanpham' and hienthi=1 order by stt asc,id desc";
-$d->query($sql_dvquan);
-$p_danhmuc=$d->result_array();	
-											
-?>
-<ul class="list_news_r">    
-<?php for($i=0; $i < count($p_danhmuc); $i++){ 
-$d->reset();
-$sql_dvquan="select ten$lang as ten,tenkhongdau,id from #_product_list where id_danhmuc=".$p_danhmuc[$i]['id']." and type='sanpham' and hienthi=1 order by stt asc,id desc";
-$d->query($sql_dvquan);
-$p_list=$d->result_array();
-?>
-<li><a href="product/<?=$p_danhmuc[$i]['tenkhongdau']?>/"><?=$p_danhmuc[$i]['ten']?></a>
-    
-    <?php if(count($p_list)>0) { ?>
-    <ul class="dm_cap2">
-    <?php for($j=0;$j<count($p_list);$j++) { ?>
-    	<li><a href="product/<?=$p_list[$j]['id']?>/<?=$p_list[$j]['tenkhongdau']?>/"><?=$p_list[$j]['ten']?></a></li>
-    <?php } ?>
-    </ul>
-    <?php } ?>
 	
-</li>
-<?php } ?>
-</ul>
-      
+	<?php	
+	$d->reset();
+	$sql_dvquan="select ten$lang as ten,tenkhongdau,id from #_product_danhmuc where type='sanpham' and hienthi=1 order by stt asc,id desc";
+	$d->query($sql_dvquan);
+	$p_danhmuc=$d->result_array();	
+	
+	?>
+	<ul class="list_news_r">    
+		<?php for($i=0; $i < count($p_danhmuc); $i++){ 
+			$d->reset();
+			$sql_dvquan="select ten$lang as ten,tenkhongdau,id from #_product_list where id_danhmuc=".$p_danhmuc[$i]['id']." and type='sanpham' and hienthi=1 order by stt asc,id desc";
+			$d->query($sql_dvquan);
+			$p_list=$d->result_array();
+			?>
+			<li><a href="product/<?=$p_danhmuc[$i]['tenkhongdau']?>/"><?=$p_danhmuc[$i]['ten']?></a>
+				
+				<?php if(count($p_list)>0) { ?>
+					<ul class="dm_cap2">
+						<?=$title_cat ?>
+						<?=$id_list ?>
+
+						<?php for($j=0;$j<count($p_list);$j++) { ?>
+							<li><a href="product/<?=$p_list[$j]['id']?>/<?=$p_list[$j]['tenkhongdau']?>/"><?=$p_list[$j]['ten']?></a></li>
+						<?php } ?>
+					</ul>
+				<?php } ?>
+				
+			</li>
+		<?php } ?>
+	</ul>
+	
 </div><!---END #danhmuc-->
 
 

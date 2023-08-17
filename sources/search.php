@@ -25,7 +25,7 @@
 		$bg = $pageSize*$page;		
 		
 		$d->reset();
-		$sql = "select id,ten$lang as ten,tenkhongdau,thumb,photo,masp,gia,giacu from #_product where $where limit $bg,$pageSize";		
+		$sql = "select * from #_product where $where limit $bg,$pageSize";		
 		$d->query($sql);
 		$product = $d->result_array();	
 		$url_link = getCurrentPageURL();
