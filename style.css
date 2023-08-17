@@ -642,3 +642,6 @@ table#tt span{color:red}
 .mz-expand .mz-figure > img {
 	min-height: 60%  !important;
 }
+.pagination .pages{
+	display: flex;
+}

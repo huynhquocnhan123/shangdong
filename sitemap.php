@@ -17,7 +17,7 @@ include_once _lib."class.database.php";
 include_once _lib."functions_user.php";
 include_once _lib."functions_giohang.php";
 include_once _lib."file_requick.php";
-	
+
 
 $header_xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<urlset xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\" xsi:schemaLocation=\"http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd\">
 
@@ -46,7 +46,7 @@ $d->query($sql_list);
 $dmsp = $d->result_array();
 
 foreach ($dmsp as $key_d => $value) {
-fwrite($file_topic, "<url><loc>http://".$config_url."/san-pham/".$value['tenkhongdau']."/"."</loc><lastmod>".date('d/m/Y - g:i A',$value['ngaytao'])."</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>");
+	fwrite($file_topic, "<url><loc>http://".$config_url."/san-pham/".$value['tenkhongdau']."/"."</loc><lastmod>".date('d/m/Y - g:i A',$value['ngaytao'])."</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>");
 
 	
 	$sql2="select id,tenkhongdau,ngaytao from #_product_list where id_danhmuc=".$value['id']." and type='".$typesp."' and hienthi=1 order by stt asc ";
@@ -55,6 +55,17 @@ fwrite($file_topic, "<url><loc>http://".$config_url."/san-pham/".$value['tenkhon
 	
 	foreach ($list_sp as $key_c => $value2) {
 		fwrite($file_topic, "<url><loc>http://".$config_url."/san-pham/".$value['id']."/".$value2['tenkhongdau']."/"."</loc><lastmod>".date('d/m/Y - g:i A',$value2['ngaytao'])."</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>");
+
+
+		//create url list category
+		$sql3="select id,tenkhongdau,ngaytao from #_product_cat where id_list=".$value2['id']." and type='".$typesp."' and hienthi=1 order by stt asc ";
+		$d->query($sql3);
+		$list_cats=$d->result_array();
+
+		foreach ($list_cats as $key_d => $value3) {
+			fwrite($file_topic, "<url><loc>http://".$config_url."/san-pham/".$value['tenkhongdau']."/".$value2['tenkhongdau']."/".$value3['tenkhongdau']."/"."</loc><lastmod>".date('d/m/Y - g:i A',$value3['ngaytao'])."</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>");
+
+		}
 
 	}
 
@@ -65,7 +76,7 @@ $sql = "select id,tenkhongdau,ngaytao from table_product where type='".$typesp."
 $d->query($sql);
 $detail = $d->result_array();
 foreach ($detail as $key_d => $m_dt) {
-fwrite($file_topic, "<url><loc>http://".$config_url."/san-pham/".$m_dt['tenkhongdau'].".html</loc><lastmod>".date('d/m/Y - g:i A',$m_dt['ngaytao'])."</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>");
+	fwrite($file_topic, "<url><loc>http://".$config_url."/san-pham/".$m_dt['tenkhongdau'].".html</loc><lastmod>".date('d/m/Y - g:i A',$m_dt['ngaytao'])."</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>");
 }
 
 
@@ -75,7 +86,7 @@ $sql_news = "select id,tenkhongdau,ngaytao from table_news where type='tintuc' a
 $d->query($sql_news);
 $news_s = $d->result_array();
 foreach ($news_s as $key_d => $m_dt) {
-fwrite($file_topic, "<url><loc>http://".$config_url."/tin-tuc/".$m_dt['tenkhongdau'].".html"."</loc><lastmod>".date('d/m/Y - g:i A',$m_dt['ngaytao'])."</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>");
+	fwrite($file_topic, "<url><loc>http://".$config_url."/tin-tuc/".$m_dt['tenkhongdau'].".html"."</loc><lastmod>".date('d/m/Y - g:i A',$m_dt['ngaytao'])."</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>");
 }
 
 
@@ -84,7 +95,7 @@ $sql_news = "select id,tenkhongdau,ngaytao from table_news where type='dichvu' a
 $d->query($sql_news);
 $news_s = $d->result_array();
 foreach ($news_s as $key_d => $m_dt) {
-fwrite($file_topic, "<url><loc>http://".$config_url."/dich-vu/".$m_dt['tenkhongdau'].".html"."</loc><lastmod>".date('d/m/Y - g:i A',$m_dt['ngaytao'])."</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>");
+	fwrite($file_topic, "<url><loc>http://".$config_url."/dich-vu/".$m_dt['tenkhongdau'].".html"."</loc><lastmod>".date('d/m/Y - g:i A',$m_dt['ngaytao'])."</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>");
 }
 
 /*news-type*/
@@ -92,7 +103,7 @@ $sql_news = "select id,tenkhongdau,ngaytao from table_news where type='duan' and
 $d->query($sql_news);
 $news_s = $d->result_array();
 foreach ($news_s as $key_d => $m_dt) {
-fwrite($file_topic, "<url><loc>http://".$config_url."/du-an/".$m_dt['tenkhongdau'].".html"."</loc><lastmod>".date('d/m/Y - g:i A',$m_dt['ngaytao'])."</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>");
+	fwrite($file_topic, "<url><loc>http://".$config_url."/du-an/".$m_dt['tenkhongdau'].".html"."</loc><lastmod>".date('d/m/Y - g:i A',$m_dt['ngaytao'])."</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>");
 }
 
 

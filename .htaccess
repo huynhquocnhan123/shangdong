@@ -56,8 +56,26 @@ RewriteRule ^([a-zA-Z0-9_-]+).html&p=([0-9]+)$ index.php?com=$1&p=$2  [L]
 RewriteRule ^([a-zA-Z0-9_-]+)/([0-9]+)/([a-zA-Z0-9_-]+)/$ index.php?com=$1&id_list=$2  [L]
 RewriteRule ^([a-zA-Z0-9_-]+)/([0-9]+)/([a-zA-Z0-9_-]+)/&p=([0-9]+)$ index.php?com=$1&id_list=$2&p=$4  [L]
 
+
+
+
+
+
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/$ index.php?com=$1&id_cat=$3 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/&p=([0-9]+)$ index.php?com=$1&id_cat=$3&p=$4  [L]
+
+
+
+
+
+
+
 RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/$ index.php?com=$1&id_danhmuc=$2  [L]
 RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/&p=([0-9]+)$ index.php?com=$1&id_danhmuc=$2&p=$3  [L]
+
+
+
 
 RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+)$ index.php?com=$1&id_danhmuc=$3  [L]
 RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+)&p=([0-9]+)$ index.php?com=$1&id_danhmuc=$3&p=$4  [L]
