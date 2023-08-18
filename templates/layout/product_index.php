@@ -13,16 +13,29 @@ $product=$d->result_array();
 	<div class="box_container2">
 		<h3 class="title">New Product</h3>	
 		<div class="slick_product">
-			<?php foreach ($product as $key => $value2) { ?>
-				<div class="product_item">	
-					<a href="product/<?=$value2['tenkhongdau']?>.html">
-						<img src="<?=_upload_sanpham_l.$value2['thumb']?>" alt="" class="product_img">
-						<h4 class="product_name"><?=$value2['ten']?></h4>
-					</a>
-					<div class="product_desc"><?=$value2['mota']?></div>
-					<div class="icon"><span><img src="images/icon1.png" alt=""></span><span><img src="images/icon2.png" alt=""></span></div>
-				</div>
-			<?php } ?>
+			<?php foreach($product as $k => $value){
+					$d->reset();
+					$sql_img_plus = "select photo,thumb from #_hinhanh where id_hinhanh='".$value['id']."' limit 0,1 ";
+					$d->query($sql_img_plus);
+					$img_plus = $d->fetch_array(); 
+
+					?>
+					<div class="item" >
+						<div class="item" >
+							<h3 class="ten"><a href="san-pham/<?=$value['tenkhongdau']?>.html" title="<?=$value['ten']?>" ><?=$value['ten']?></a></h3>
+							<a href="san-pham/<?=$value['tenkhongdau']?>.html" title="<?=$value['ten']?>">
+								<img class="img" src="<?=_upload_sanpham_l.$value['thumb']?>" alt="<?=$value['ten']?>" />
+							</a>
+							<?php if($img_plus['photo']!=''){ ?> 
+							<div class="item_img_plus">		
+										<a href="san-pham/<?=$value['tenkhongdau']?>.html" title="<?=$value['ten']?>">
+											<img class="img_them" src="<?=_upload_hinhthem_l.$img_plus['thumb']?>" alt="<?=$value['ten']?>" />
+										</a>			
+								</div>
+							<?php	} ?>
+						
+					</div><!---END .item-->
+				<?php } ?>
 		</div>
 	</div>
 </div>	
