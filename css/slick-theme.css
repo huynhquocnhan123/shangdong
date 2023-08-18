@@ -15,7 +15,7 @@
     line-height: 0;
     position: absolute;
     top:50%;
-	margin-top:-20px;
+	margin-top:-40px;
     display: block;
     width: 40px;
     height: 40px;
@@ -37,7 +37,7 @@
     line-height: 0;
     position: absolute;
     top:50%;
-	margin-top:-20px;
+	margin-top:-40px;
     display: block;
     width: 40px;
     height: 40px;
@@ -84,7 +84,12 @@
 
 .slick-prev
 {
-    left: 0px;
+    left: -20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    box-shadow: rgba(186, 186, 186, 0.8) 0px 0rem 1rem;
 }
 [dir='rtl'] .slick-prev
 {
@@ -102,7 +107,12 @@
 
 .slick-next
 {
-    right: 0px;
+     right: -20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    box-shadow: rgba(186, 186, 186, 0.8) 0px 0rem 1rem;
 }
 [dir='rtl'] .slick-next
 {
