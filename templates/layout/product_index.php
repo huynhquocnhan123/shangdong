@@ -20,15 +20,15 @@ $product=$d->result_array();
 					$img_plus = $d->fetch_array(); 
 
 					?>
-					<div class="item" >
+					<div class="items" >
 						
-							<h3 class="ten"><a href="san-pham/<?=$value['tenkhongdau']?>.html" title="<?=$value['ten']?>" ><?=$value['ten']?></a></h3>
-							<a href="san-pham/<?=$value['tenkhongdau']?>.html" title="<?=$value['ten']?>">
+							<h3 class="ten"><a href="product/<?=$value['tenkhongdau']?>.html" title="<?=$value['ten']?>" ><?=$value['ten']?></a></h3>
+							<a href="product/<?=$value['tenkhongdau']?>.html" title="<?=$value['ten']?>">
 								<img class="img" src="<?=_upload_sanpham_l.$value['thumb']?>" alt="<?=$value['ten']?>" />
 							</a>
 							<?php if($img_plus['photo']!=''){ ?> 
 							<div class="item_img_plus">		
-										<a href="san-pham/<?=$value['tenkhongdau']?>.html" title="<?=$value['ten']?>">
+										<a href="product/<?=$value['tenkhongdau']?>.html" title="<?=$value['ten']?>">
 											<img class="img_them" src="<?=_upload_hinhthem_l.$img_plus['thumb']?>" alt="<?=$value['ten']?>" />
 										</a>			
 								</div>

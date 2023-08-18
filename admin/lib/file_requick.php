@@ -29,19 +29,20 @@
 			break;
 
 		case 'news':
-			$type = "tintuc";
+			$type = "ency";
 			$title = "News";
 			$title_cat = "News";
 			$title_other = "News Other";
 			$source = "news";
 			$template = isset($_GET['id']) ? "news_detail" : "news";
 			break;
-		
-		case 'encyclopedias':
-			$type = "ency";
-			$title = "Encyclopedia";
-			$title_cat = "Encyclopedia";
-			$title_other = "Encyclopedia Other";
+
+
+
+		case 'service':
+			$type = "tintuc";
+			$title = "Services";
+			$title_other = "Services Other";
 			$source = "news";
 			$template = isset($_GET['id']) ? "news_detail" : "news";
 			break;
