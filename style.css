@@ -37,6 +37,7 @@ div#header .content_top{width:100%;max-width:1200px;margin:0 auto;position:relat
 	justify-content: space-around;
 	z-index: 400;
 	background-color: transparent;
+	max-width: 1150px;
 }
 #menu .list_menu{display: flex;justify-content: flex-end;justify-content: space-evenly;}
 .top_header{width:100%;box-sizing:border-box;line-height:28px;margin:0 auto;background:url(images/bg_top.jpg) repeat-x top;border-bottom:solid 1px #F1585C;padding:5px}
@@ -141,12 +142,29 @@ div.menu ul li ul,div.menu ul li:hover ul li ul{
 	left: 0;
 	margin-left:0;
 	/*display:none;*/
-	width: 100%;
+	width: 110%;
 	height:400px;background:#666;line-height:1.5;z-index:9999;
 }
 div.menu ul li ul li{float:left;width:100%;/*position:relative*/;height:auto;text-align:left}
 div.menu ul li ul li a{text-transform:none;display:block;line-height:30px;padding:3px 10px;font-size:15px;color:#FFF}
-div.menu ul li ul li a:hover{color:#FF0}
+div.menu ul li ul li a:hover{color:#FF0;font-weight: bold;}
+div.menu ul li ul li a:hover::before{
+	content: "";
+	width: 20px;
+	height: 2px;
+	transform: rotate(90deg);
+	color:#fff;
+	background: #fff;
+	font-weight: bold;
+	display: inline-block;
+	margin-bottom: 3px;
+	padding: 0px 5px;
+	/*padding-left: 100px;*/
+	/*position: absolute;*/
+	/*left: 0;*/
+
+}
+
 div.menu ul li ul li ul{left:100%;top:0}
 div.search{position:absolute;right:10px;top:65px;height:32px;width:220px;box-sizing:border-box;border:
 	solid 1px #F0F0F0;background:#FFF;border-radius:15px}
@@ -575,7 +593,7 @@ object-fit: fill;}
 	justify-content: space-around;
 	border-right: 1px solid #dcdcdc;
 	width: 50%;
-	margin-right: 10px;
+	/*margin-right: 10px;*/
 
 
 }
@@ -677,4 +695,48 @@ object-fit: fill;}
 .wap_box_new hr{
 	max-width: 1150px;
 	margin:20px auto;
+}
+.bound{
+	width: 200px;
+	/*position: relative;*/
+}
+.icon_menu{
+	display: flex;
+	height: 30px;
+	/*margin: auto;*/
+	position: relative;
+	margin-left: 20px;
+	margin-top: 20px;
+	align-items: baseline;
+}
+.icon_menu button{
+	width: 30px;
+	height: 30px;
+	background: none;
+	margin-right: 5px;
+}
+.icon_menu img{
+	width: 20px;
+	height: 20px;
+	object-fit: contain;
+}
+.icon_menu p img{
+	margin-top: 10px;
+	height: 25px;
+	width: 25px;
+	padding: auto;
+}
+.icon_menu p span{
+	/*margin-bottom: 20px;*/
+	/*padding: 20px 0;*/
+	/*padding: 50px 0;*/
+	margin: 0 1px 0 5px;
+	/*margin-bottom: 200px;*/
+	padding-bottom: 10px;
+	font-size: 20px;
+}
+.col_w10{
+	width: 10%;
+	flex: left;
+
 }

@@ -37,7 +37,7 @@
           <input type="hidden" name="id" id="id_this_post" value="<?=@$item['id']?>" />
 
          
-        <div class="formRow">
+        <div class="formRow none">
 			<label>Tải hình ảnh:</label>
 			<div class="formRight">
             	<input type="file" id="file" name="file" />

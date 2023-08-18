@@ -70,6 +70,30 @@ foreach ($dmsp as $key_d => $value) {
 	}
 
 }
+//service
+$typese = "tintuc";
+
+$sql_list = "select  id,tenkhongdau,ngaytao from #_news_danhmuc where type='".$typese."' and hienthi=1 order by stt asc";
+$d->query($sql_list);
+$dmsp = $d->result_array();
+foreach ($dmsp as $key_d => $value) {
+	fwrite($file_topic, "<url><loc>http://".$config_url."/service/".$value['tenkhongdau']."/"."</loc><lastmod>".date('d/m/Y - g:i A',$value['ngaytao'])."</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>");
+
+	
+	$sql2="select id,tenkhongdau,ngaytao from #_news_list where id_danhmuc=".$value['id']." and type='".$typese."' and hienthi=1 order by stt asc ";
+	$d->query($sql2);
+	$list_sp=$d->result_array();
+	
+	foreach ($list_sp as $key_c => $value2) {
+		fwrite($file_topic, "<url><loc>http://".$config_url."/service/".$value['tenkhongdau']."/".$value2['tenkhongdau']."/"."</loc><lastmod>".date('d/m/Y - g:i A',$value2['ngaytao'])."</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>");
+
+
+		//create url list category
+		
+
+	}
+
+}
 
 /*product-type*/	
 $sql = "select id,tenkhongdau,ngaytao from table_product where type='".$typesp."' and hienthi=1 order by ngaytao desc,stt asc";
@@ -81,13 +105,13 @@ foreach ($detail as $key_d => $m_dt) {
 
 
 
-/*news-type*/
-$sql_news = "select id,tenkhongdau,ngaytao from table_news where type='tintuc' and hienthi=1 order by ngaytao desc,stt asc";
-$d->query($sql_news);
-$news_s = $d->result_array();
-foreach ($news_s as $key_d => $m_dt) {
-	fwrite($file_topic, "<url><loc>http://".$config_url."/tin-tuc/".$m_dt['tenkhongdau'].".html"."</loc><lastmod>".date('d/m/Y - g:i A',$m_dt['ngaytao'])."</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>");
-}
+// /*news-type*/
+// $sql_news = "select id,tenkhongdau,ngaytao from table_news where type='tintuc' and hienthi=1 order by ngaytao desc,stt asc";
+// $d->query($sql_news);
+// $news_s = $d->result_array();
+// foreach ($news_s as $key_d => $m_dt) {
+// 	fwrite($file_topic, "<url><loc>http://".$config_url."/tin-tuc/".$m_dt['tenkhongdau'].".html"."</loc><lastmod>".date('d/m/Y - g:i A',$m_dt['ngaytao'])."</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>");
+// }
 
 
 /*news-type*/

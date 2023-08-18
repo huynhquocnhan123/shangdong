@@ -72,7 +72,7 @@
         <td></td>
         <td class="tb_data_small"><a href="#" class="tipS" style="margin: 5px;">Thứ tự</a></td>       
         <td class="sortCol"><div>Tên danh mục<span></span></div></td>
-        <td class="tb_data_small">Ảnh</td>
+        <td class="tb_data_small none">Ảnh</td>
         <td class="tb_data_small">Nổi bật</td>
         <td class="tb_data_small">Ẩn/Hiện</td>
         <td width="200">Thao tác</td>
@@ -92,9 +92,9 @@
             <a href="index.php?com=news&act=edit_danhmuc&id=<?=$items[$i]['id']?>&type=<?=$_REQUEST['type']?><?php if($_REQUEST['p']!='') echo'&p='.$_REQUEST['p'];?>" class="tipS SC_bold"><?=$items[$i]['ten']?></a>
         </td>
         
-        <td align="center">
+  <!--       <td align="center none">
         <img src="<?=_upload_tintuc.$items[$i]['thumb']?>"  height="50px" alt="NO PHOTO" />
-        </td>
+        </td> -->
         
          <td align="center">
         <a data-val2="table_<?=$_GET['com']?>_danhmuc" rel="<?=$items[$i]['noibat']?>" data-val3="noibat" class="diamondToggle <?=($items[$i]['noibat']==1)?"diamondToggleOff":""?>" data-val0="<?=$items[$i]['id']?>" ></a> 

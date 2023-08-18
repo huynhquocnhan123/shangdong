@@ -5,7 +5,10 @@
 	@$id_cat =   trim(strip_tags(addslashes($_GET['id_cat'])));
 	@$id_item =   trim(strip_tags(addslashes($_GET['id_item'])));
 	@$id =   trim(strip_tags(addslashes($_GET['id'])));	
-		
+		echo $id;
+		echo $id_danhmuc;
+		echo $id_list;
+		echo $id_danhmuc;
     if($id!='')
 	{
 		//Cập nhật lượt xem
@@ -116,7 +119,7 @@
 	//Tất cả tin tức
 	else
 	{
-		$where = " type='".$type."' and hienthi=1 order by stt,id desc";
+		$where = " type='ency' and hienthi=1 order by stt,id desc";
 	}
 	
 	#Lấy tin tức và phân trang

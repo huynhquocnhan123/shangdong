@@ -148,18 +148,16 @@ function get_main_item()
        <div id="info" class="tab_content">
           <input type="hidden" name="id" id="id_this_post" value="<?=@$item['id']?>" />
 		
-        <?php if($_GET['type']=='dichvu') { ?>
-        <div class="formRow none">
+        <div class="formRow ">
 			<label>Chọn danh mục 1</label>
 			<div class="formRight">
 			<?=get_main_danhmuc()?>
 			</div>
 			<div class="clear"></div>
 		</div>
-        <?php } ?>
         
         
-        <div class="formRow none">
+        <div class="formRow ">
 			<label>Chọn danh mục cấp 2</label>
 			<div class="formRight">
 			<?=get_main_list()?>
