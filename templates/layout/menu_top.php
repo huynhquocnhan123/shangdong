@@ -111,7 +111,7 @@ $p_danhmuc_new=$d->result_array();
     <a class="<?php if($_REQUEST['com'] == 'service') echo 'active'; ?>" href="service.html">
     Service</a>
     <ul class="content__list">
-        <h2>Product</h2>
+        <h2>Service</h2>
         <div>
             <?php 
             for($i = 0; $i < count($p_danhmuc_new); $i++){ 
