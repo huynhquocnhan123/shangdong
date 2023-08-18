@@ -21,7 +21,7 @@ $product=$d->result_array();
 
 					?>
 					<div class="item" >
-						<div class="item" >
+						
 							<h3 class="ten"><a href="san-pham/<?=$value['tenkhongdau']?>.html" title="<?=$value['ten']?>" ><?=$value['ten']?></a></h3>
 							<a href="san-pham/<?=$value['tenkhongdau']?>.html" title="<?=$value['ten']?>">
 								<img class="img" src="<?=_upload_sanpham_l.$value['thumb']?>" alt="<?=$value['ten']?>" />

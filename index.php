@@ -80,9 +80,9 @@ include_once _source."counter.php";
         <?php include _template."layout/slider.php";?>
     </div><!---END #slider--> 
     <?php } ?>
-    <<div class="wap_newitem">
+    
     <?php if($template=='index') { include _template."layout/product_index.php"; } ?>
-    </div>
+    
     <?php if($template=='index') { include _template."layout/tintuc_index.php"; } ?>
     
     <?php if($template=='index') { include _template."layout/banner.php"; } ?> 

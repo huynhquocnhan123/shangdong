@@ -422,26 +422,7 @@ table#tt span{color:red}
 .icon span{display: inline-block;margin: 0 5px;}
 #product_recommend .slick_product{;max-width: 1400px;margin: 0 auto;}
 
-.wap_newitem{
-    margin-top: 140px;
-    margin-bottom: 60px;
-}
 
-
-.wap_newitem .slick_product{
-    display: flex;
-    flex-wrap: wrap;
-}
-div .slick_product{
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-}
-.wap_newitem .slick_product .item{
-    position: relative;
-    margin: 0 5px 30px 5px;
-    width: calc((100% / 4) - 10px);
-}
 .item{
     text-align: center;
 }
