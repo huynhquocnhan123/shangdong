@@ -1,7 +1,7 @@
 
 <?php	
 // $d->reset();
-// $sql_product="select * from #_product_cat where id_list=".$id_cats." and type='sanpham' and hienthi=1 order by stt asc,id desc";
+// $sql_product="select * from #_product_cat where id_list=".$id_cat." and type='sanpham' and hienthi=1 order by stt asc,id desc";
 // $d->query($sql_product);
 // $p_product=$d->result_array();	
 
@@ -52,7 +52,7 @@
 		<?php 
 
 		$d->reset();
-		$sql_producmenu="select * from #_product_list where id_danhmuc=".$id_danhmucs	." and type='sanpham' and hienthi=1 order by stt asc,id desc";
+		$sql_producmenu="select * from #_product_list where id_danhmuc=".$id_danhmucs." and type='sanpham' and hienthi=1 order by stt asc,id desc";
 		$d->query($sql_producmenu);
 		$p_productmenu=$d->result_array();
 
@@ -60,7 +60,6 @@
 		?>
 
 		<div id="">
-			<!-- product/35/pcr/ -->
 			<ul class="list_news_r">    
 				<?php for($i=0; $i < count($p_productmenu); $i++){ ?>
 					<?php 
@@ -74,7 +73,7 @@
 					<h2 href="product/<?=$p_productmenu[$i]['tenkhongdau']?>/"><?=$p_productmenu[$i]['ten']?></h2>
 					<?php for($j=0;$j<count($p_product);$j++) { ?>
 						<li>
-							<a href="product/<?=$title_no?>/<?=$p_productmenu[$i]['tenkhongdau']?>/<?=$p_product[$j]['tenkhongdau']?>"><?=$p_product[$j]['tenkhongdau']?></a>
+							<a href="product/<?=$title_no?>/<?=$p_productmenu[$i]['tenkhongdau']?>/<?=$p_product[$j]['tenkhongdau']?>/">    <?=$p_product[$j]['tenkhongdau']?>    </a>
 						</li>
 					<?php } ?> 
 					<?=$p_product[i]['ten']?>
@@ -83,20 +82,17 @@
 		</div>
 
 	<?php } ?>
-	<?php if($id_cats !=''){ ?>
-
+	<?php if($id_cats!=''){ ?>
 		<?php 
 
 		$d->reset();
-		$sql_producmenu="select * from #_product_list where id_danhmuc=".$id_danhmucs	." and type='sanpham' and hienthi=1 order by stt asc,id desc";
+		$sql_producmenu="select * from #_product_list where id_danhmuc=".$id_danhmuccat." and type='sanpham' and hienthi=1 order by stt asc,id desc";
 		$d->query($sql_producmenu);
 		$p_productmenu=$d->result_array();
-
 
 		?>
 
 		<div id="">
-			<!-- product/35/pcr/ -->
 			<ul class="list_news_r">    
 				<?php for($i=0; $i < count($p_productmenu); $i++){ ?>
 					<?php 
@@ -110,7 +106,7 @@
 					<h2 href="product/<?=$p_productmenu[$i]['tenkhongdau']?>/"><?=$p_productmenu[$i]['ten']?></h2>
 					<?php for($j=0;$j<count($p_product);$j++) { ?>
 						<li>
-							<a href="product/<?=$title_no?>/<?=$p_productmenu[$i]['tenkhongdau']?>/<?=$p_product[$j]['tenkhongdau']?>"><?=$p_product[$j]['tenkhongdau']?></a>
+							<a href="product/<?=$tenkhongdau_danhmuc?>/<?=$p_productmenu[$i]['tenkhongdau']?>/<?=$p_product[$j]['tenkhongdau']?>/"><?=$p_product[$j]['tenkhongdau']?></a>
 						</li>
 					<?php } ?> 
 					<?=$p_product[i]['ten']?>
@@ -118,10 +114,9 @@
 			</ul>
 		</div>
 
-	<?php } ?>
+	<?php } ?> 
 	<div class="clear"></div>
 </div>
-<!-- <?php include _template."layout/left.php";?>  -->
 
 <div id="">
 	<div class="wap_item">

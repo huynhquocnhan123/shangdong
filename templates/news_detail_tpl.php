@@ -1,6 +1,8 @@
+<div id="banner_product">
+    <img src="images/banner_product.jpg" alt="Banner">
+</div>
 
-
-<h1 class="tieude_giua"><span><?=$title_cat?></span></h1>
+<!-- <h1 class="tieude_giua"><span><?=$title_cat?></span></h1> -->
 <div class="box_container">
     <div class="content">   	    
         <?=$row_detail['noidung']?> 

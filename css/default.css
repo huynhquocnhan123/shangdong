@@ -36,7 +36,7 @@ div.frm_lienhe .item_lienhe input[type='button'],div.frm_lienhe .item_lienhe inp
 .wap_box_new{display: flex;flex-wrap: wrap;}
 /*css tin tức*/
 .box_news{
-	width:calc(50% - 30px);
+	/*width:calc(50% - 30px);*/
 	text-align:justify;
 	display:inline-block;
 	vertical-align:top;
