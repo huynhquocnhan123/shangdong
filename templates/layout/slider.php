@@ -9,7 +9,7 @@ $slider=$d->result_array();
 <div id="slick_slider_pc">
     <?php  for($i=0;$i<count($slider);$i++){ ?>
         <div class="single_slider">
-            <img src="<?=_upload_hinhanh_l.$slider[$i]['photo']?>" alt="<?=$slider[$i]['ten']?>" id="wows1_<?=$i+1?>" />
+            <a href="product.html"><img src="<?=_upload_hinhanh_l.$slider[$i]['photo']?>" alt="<?=$slider[$i]['ten']?>" id="wows1_<?=$i+1?>" /></a>
         </div>
     <?php } ?>  
 </div>
