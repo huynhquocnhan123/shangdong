@@ -22,11 +22,18 @@ $p_brand=$d->result_array();
 </div> -->
 <input type="hidden" value="1" class="soluong"  />
 <div class="list__brand">
-
+	<?php echo $id_danhmucget ?>
 	<?php foreach($p_brand as $q => $brand){ ?>
-		<a href="product/<?=$brand['tenkhongdau']?>/">
-			<img src="<?=_upload_sanpham_l.$brand['photo']?>" alt="" class="product_img">
-		</a>
+		<?php if($brand['id']== $id_danhmucs || $brand['id']==$id_danhmucget) {?>
+			<a class="active__brand" href="product/<?=$brand['tenkhongdau']?>/">
+				<img src="<?=_upload_sanpham_l.$brand['photo']?>" alt="" class="product_img">
+			</a>
+		<?php } else {?>
+
+			<a class="" href="product/<?=$brand['tenkhongdau']?>/">
+				<img src="<?=_upload_sanpham_l.$brand['photo']?>" alt="" class="product_img">
+			</a>
+		<?php }?>
 	<?php } ?>
 </div>
 <div class="box_container product">

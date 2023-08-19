@@ -32,7 +32,7 @@ $product=$d->result_array();
 			</button>
 		</div>
 			
-		<div class="slick_product">
+<div class="slick_product">
 			<?php foreach($product as $k => $value){
 					$d->reset();
 					$sql_img_plus = "select photo,thumb from #_hinhanh where id_hinhanh='".$value['id']."' limit 0,1 ";
