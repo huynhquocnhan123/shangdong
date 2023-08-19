@@ -19,10 +19,10 @@
 
    <li class="categories_li <?php if($_GET['com']=='news' or $_GET['com']=='video') echo ' activemenu' ?>" id="menu_tt"><a href="" title="" class="exp"><span>Bài viết</span><strong></strong></a>
     <ul class="sub">
-        <?php //phanquyen_menu('Quản lý danh mục 1','news','man_danhmuc','tintuc'); ?>
-        <?php //phanquyen_menu('Quản lý danh mục 2','news','man_list','tintuc'); ?>
-        <?php phanquyen_menu('TIN TỨC','news','man','tintuc'); ?>
-        <?php phanquyen_menu('Encyclopedia','news','man','ency'); ?>
+        <?php phanquyen_menu('Quản lý danh mục 1','news','man_danhmuc','tintuc'); ?>
+        <?php phanquyen_menu('Quản lý danh mục 2','news','man_list','tintuc'); ?>
+        <?php phanquyen_menu('Service','news','man','tintuc'); ?>
+        <?php phanquyen_menu('News','news','man','ency'); ?>
     </ul>
 </li>
 

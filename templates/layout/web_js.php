@@ -60,7 +60,14 @@
 <script language="javascript" type="text/javascript">
 	$(document).ready(function() { 
 		//Hover vào menu xổ xuống
+		// $(".active2").style.display="none"
+				 // $(".active").hover(function () {
+				 // 	$('.active').css({visibility:""})
+				 // })
+
+
 		$(".menu ul li").hover(function(){
+
 			$(this).find('ul:first').css({visibility: "visible",display: "none"}).show(300); 
 			},function(){ 
 			$(this).find('ul:first').css({visibility: "hidden"});
