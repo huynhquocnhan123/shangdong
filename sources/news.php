@@ -5,10 +5,9 @@
 	@$id_cat =   trim(strip_tags(addslashes($_GET['id_cat'])));
 	@$id_item =   trim(strip_tags(addslashes($_GET['id_item'])));
 	@$id =   trim(strip_tags(addslashes($_GET['id'])));	
-		echo $id;
+		// echo $id;
 		echo $id_danhmuc;
 		echo $id_list;
-		echo $id_danhmuc;
     if($id!='')
 	{
 		//Cập nhật lượt xem
@@ -92,7 +91,7 @@
 		$title_bar = $d->fetch_array();
 		if(empty($title_bar)){redirect("http://".$config_url.'/404.php');}
 		
-		$title_cat = $title_bar['ten'];
+		$title_list = $title_bar['ten'];
 		$title = $title_bar['title'];
 		$keywords = $title_bar['keywords'];
 		$description = $title_bar['description'];
