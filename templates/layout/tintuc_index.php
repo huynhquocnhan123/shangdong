@@ -11,7 +11,7 @@ $tintuc_i = $d->result_array();
 ?>
 <div id="tintuc_index">
 	<div class="content_noidung">
-        <div class="title_tintuc"><span>News</span><a href="news.html" class="see_more">More ></a></div>
+        <div class="title_tintuc"><span>News</span></div>
         <div id="slick_tintuc_i">
             <?php for($i=0;$i<count($tintuc_i);$i++){	?>
                 <div class="box_news">
@@ -19,9 +19,6 @@ $tintuc_i = $d->result_array();
                     <a href="tin-tuc/<?=$tintuc_i[$i]['tenkhongdau']?>.html" title="<?=$tintuc_i[$i]['ten']?>"><img class="img" src="<?=_upload_tintuc_l.$tintuc_i[$i]['thumb']?>" alt="<?=$tintuc_i[$i]['ten']?>" /></a>  
                     <div class="news_info">
                         <h3 class="ten"><a href="tin-tuc/<?=$tintuc_i[$i]['tenkhongdau']?>.html" title="<?=$tintuc_i[$i]['ten']?>"><?=$tintuc_i[$i]['ten']?></a></h3>
-                        <div class="news_desc">
-                           <?=catchuoi($tintuc_i[$i]['mota'],60)?>
-                        </div>
                         <a href="tin-tuc/<?=$tintuc_i[$i]['tenkhongdau']?>.html" class="read">Read more +</a>
                     </div>
                 </div><!---END .box_new-->
