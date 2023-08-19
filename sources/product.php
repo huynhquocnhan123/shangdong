@@ -81,13 +81,13 @@ else if($id!='')
 elseif($id_item!='')
 {
 	$d->reset();
-	$sql = "select id,ten$lang as ten,title,keywords,description FROM #_product_item where id='$id_item' limit 0,1";
+	$sql = "select id,ten$lang as ten,title,keywords,description,id_danhmuc FROM #_product_item where id='$id_item' limit 0,1";
 	$d->query($sql);
 	$title_bar = $d->fetch_array();
 	if(empty($title_bar)){redirect("http://".$config_url.'/404.php');}
 
 	$title_cat = $title_bar['ten'];
-	$id_danhmuccat= $title_bar['id_danhmuc'];
+	$id_danhmucget= $title_bar['id_danhmuc'];
 	$title = $title_bar['title'];
 	$keywords = $title_bar['keywords'];
 	$description = $title_bar['description'];
@@ -106,6 +106,8 @@ elseif($id_cat!='')
 	$title_cat = $title_bar['ten'];
 	$id_cats=$title_bar['id'];
 	$id_danhmuccat= $title_bar['id_danhmuc'];
+	$id_danhmucget= $title_bar['id_danhmuc'];
+
 	$title = $title_bar['title'];
 	$keywords = $title_bar['keywords'];
 	$description = $title_bar['description'];
@@ -135,13 +137,15 @@ elseif($id_cat!='')
 elseif($id_list!='')
 {
 	$d->reset();
-	$sql = "select id,ten$lang as ten,title,keywords,description FROM #_product_list where id='$id_list' limit 0,1";
+	$sql = "select id,ten$lang as ten,title,keywords,description,id_danhmuc FROM #_product_list where id='$id_list' limit 0,1";
 	$d->query($sql);
 	$title_bar = $d->fetch_array();
 	if(empty($title_bar)){redirect("http://".$config_url.'/404.php');}
 
 	$title_cat = $title_bar['ten'];
 	$title = $title_bar['title'];
+		$id_danhmucget= $title_bar['id_danhmuc'];
+
 	$id_lists=$title_bar['id'];
 	$keywords = $title_bar['keywords'];
 	$description = $title_bar['description'];
