@@ -50,17 +50,17 @@ div.frm_lienhe .item_lienhe input[type='button'],div.frm_lienhe .item_lienhe inp
 	background-color: #fff;
 }
 #slick_tintuc_i,#slick_tintuc_i2{margin-right: -15px;margin-left: -15px;}
-.news_info{padding: 15px 40px;}
+.news_info{padding: 15px 0 15px 0;}
 .news_date span{font-size: 32px;font-weight: bold;margin-bottom: 15px;display: inline-block;}
 .news_info .news_date{width: 30%;text-align: center;padding: 10px;line-height: 1em;border-right: 1px solid #ccc;}
 .box_news .ten a{
 	font-size:14px;color:#000;transition:0.4s;text-decoration:none;display:block;
 	font-weight:normal;line-height:22px;padding-bottom:8px;font-family: Arial;text-transform: uppercase;font-weight: bold;
 }
-.read{color: #ffa500;margin-top: 10px;}
+.read{color: #000;margin-top: 10px; border-radius: 30px; border:1px solid #000; padding: 5px 10px; width: 150px !important;}
 .box_news .ten a:hover{color:#ffa500;transition:0.4s;}
 .box_news a.chitiet{color:#00F;}
-.box_news a img{width:100%;transition:1s;}
+.box_news a img{width:100% !important;transition:1s;}
 .box_news a img:hover{opacity:0.4;transition:1s;}
 .box_news .mota {padding-top: 10px;}
 .box_news a{display: block;}
