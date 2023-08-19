@@ -7,10 +7,10 @@
 
 
 
-// $d->reset();
-// $sql_producmenu="select * from #_product_list where id_danhmuc=58 and type='sanpham' and hienthi=1 order by stt asc,id desc";
-// $d->query($sql_producmenu);
-// $p_productmenu=$d->result_array();
+$d->reset();
+$sql_brand="select * from #_product_danhmuc where  type='sanpham' and hienthi=1 order by stt asc,id desc";
+$d->query($sql_brand);
+$p_brand=$d->result_array();
 ?>
 
 
@@ -21,7 +21,20 @@
 	<div class="inner"><a href="."><i class="fa fa-home"></i> Home</a> > <span><?=$title_cat?></span></div>
 </div> -->
 <input type="hidden" value="1" class="soluong"  />
+<div class="list__brand">
+
+	<?php foreach($p_brand as $q => $brand){ ?>
+		<a href="product/<?=$brand['tenkhongdau']?>/">
+			<img src="<?=_upload_sanpham_l.$brand['photo']?>" alt="" class="product_img">
+		</a>
+	<?php } ?>
+</div>
 <div class="box_container product">
+
+
+
+
+
 	
 	<?php if($id_lists !="") { ?>
 		<?php

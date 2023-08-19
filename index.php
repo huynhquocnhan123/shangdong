@@ -82,9 +82,15 @@ include_once _source."counter.php";
     <?php } ?>
     <div class="wap_newitem">
     <?php if($template=='index') { include _template."layout/product_index.php"; } ?>
-    </div>
 
-        <div id="main_content" <?php if($template=='index' || $template=='product' || $template=='product_detail') echo "class='index'" ?>>
+
+      //  <div id="main_content" <?php if($template=='index' || $template=='product' || $template=='product_detail') echo "class='index'" ?>>
+    
+    <?php if($template=='index') { include _template."layout/tintuc_index.php"; } ?>
+    
+    <?php if($template=='index') { include _template."layout/banner.php"; } ?> 
+
+    <div id="main_content" <?php if($template=='index' || $template=='product' || $template=='product_detail' || $template=='service') echo "class='index'" ?>>
         <?php include _template.$template."_tpl.php"; ?>
         <div class="clear"></div>
     </div><!---END #main_content-->
