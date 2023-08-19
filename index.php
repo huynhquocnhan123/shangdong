@@ -82,9 +82,6 @@ include_once _source."counter.php";
     <?php } ?>
     <div class="wap_newitem">
     <?php if($template=='index') { include _template."layout/product_index.php"; } ?>
-
-
-      //  <div id="main_content" <?php if($template=='index' || $template=='product' || $template=='product_detail') echo "class='index'" ?>>
     
     <?php if($template=='index') { include _template."layout/tintuc_index.php"; } ?>
     
