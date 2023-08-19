@@ -1,9 +1,13 @@
 <?php 
-$d->reset();
-$sql_banner = "select photo$lang as photo from #_background where type='banner' limit 0,1";
-$d->query($sql_banner);
-$row_banner = $d->fetch_array();
+$sql_brand="select * from #_product_danhmuc where  type='sanpham' and hienthi=1 order by stt asc,id desc";
+$d->query($sql_brand);
+$p_brand=$d->result_array();
 ?>
 <div id="banner">
-	<img class="banner" src="<?=_upload_hinhanh_l.$row_banner['photo']?>" />
+	<h1>Our Brands</h1>
+	<?php foreach($p_brand as $q => $brand){ ?>
+		<a href="product/<?=$brand['tenkhongdau']?>/">
+			<img src="<?=_upload_sanpham_l.$brand['photo']?>" alt="" class="product_img">
+		</a>
+	<?php } ?>
 </div>
