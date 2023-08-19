@@ -84,7 +84,7 @@
 </div><!---END .box_container-->
 
 <?php }?>
-<?php if($com=="service" & $id_list="") {?>
+<?php if($com=="service" && $id_list=='') {?>
     <h1 class="tieude_giua"><?=$title_list?></h1>
     <div class="box_container">
 
