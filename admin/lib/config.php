@@ -39,7 +39,7 @@ error_reporting(0);
 $config_url=$_SERVER["SERVER_NAME"].':/shangdongs';	
 
 $config['database']['servername'] = 'localhost';
-$config['database']['database'] = 'congtygs';
+$config['database']['database'] = 'congtylopx_hhua';
 $config['database']['username'] = 'root';
 $config['database']['password'] = '';
 $config['database']['refix'] = 'table_';

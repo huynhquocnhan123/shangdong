@@ -476,7 +476,14 @@ table#tt span{color:red}
 .session_bottom ul li{width: calc(100%/3);}
 .session_bottom ul li:nth-child(2){display: flex;flex-direction: column-reverse;}
 .session_bottom .block{width: 100%;}
-#product_recommend{position: relative;padding: 50px 0 80px;background-color: #E5E5E5;background-repeat: no-repeat;background-size: 100% 100%;background-position: center center;max-width: 1150px;margin: auto;overflow: hidden;}
+#product_recommend{position: relative;
+	padding: 50px 0 80px;
+	background-color: #E5E5E5;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: center center;
+	max-width: 1400px;
+	margin: auto;}
 #product_recommend .title{
 	font-size: 40px;
 	color: #000;
@@ -868,14 +875,7 @@ background: #FFF; border-radius: 20px}
 }
 .box_news{
 	max-width: 1150px !important;
- 	display: flex ;
-	margin:10px auto;
-	padding-bottom: 10px;
-}
-.box_news a img {
-	/*margin-bottom: 20px;*/
-	
-}
+
 .box_news a img {
 	/*margin-bottom: 20px;*/
 	width:95% !important;
